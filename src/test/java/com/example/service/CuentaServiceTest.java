@@ -30,7 +30,7 @@ public class CuentaServiceTest {
     void retiraCorrectamente() {
         cuentaService.retirar(1l, new BigDecimal("500.00"));
         BigDecimal actualSaldo = cuentaService.saldo(1l);
-        assertEquals(new BigDecimal("4500.00"), actualSaldo);
+        assertEquals(new BigDecimal("45050.00"), actualSaldo);
     }
 
     @Test
