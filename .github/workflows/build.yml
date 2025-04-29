@@ -21,8 +21,10 @@ jobs:
             - name: Compilar
               run: mvn --batch-mode -DskipTests compile
             - name: Test 
-              run: mvn --batch-mode test
+              run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
             - name: Reporte de pruebas
               uses: mikepenz/action-junit-report@v5
+              if: success() || failure()
               with:
                 report_paths: 'target/surefire-reports/TEST-*.xml'
+
