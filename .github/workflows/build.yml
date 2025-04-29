@@ -20,4 +20,5 @@ jobs:
                 distribution: 'adopt'
             - name: Compilar
               run: mvn --batch-mode -DskipTests compile
-            
+            - name: Test 
+              run: mvn --batch-mode test
